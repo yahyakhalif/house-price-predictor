@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Existing styles... */
+
+        .header-with-logout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form action="/predict" method="POST">
+            <div class="header-with-logout">
+                <h1 class="text-center">House Price Predictor</h1>
+                <a href="/logout" class="logout-link">Logout</a>
+            </div>
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <select id="type" name="type" class="form-control" required>
+                    <option value="0" class="type-option">House</option>
+                    <option value="1" class="type-option">Apartment</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="toilets">Toilets:</label>
+                <input type="number" id="toilets" name="toilets" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parking">Parking:</label>
+                <input type="number" id="parking" name="parking" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location" class="form-control" required>
+                    <option value="0" class="nairobi-option">Nairobi central</option>
+                    <option value="1" class="nairobi-option">Parklands</option>
+                    <option value="2" class="nairobi-option">Lavington</option>
+                    <option value="3" class="nairobi-option">Westlands</option>
+                    <option value="4" class="nairobi-option">Kileleshwa</option>
+                    <option value="5" class="nairobi-option">Kitisuru</option>
+                    <option value="7" class="nairobi-option">Kilimani</option>
+                    <option value="8" class="nairobi-option">karen</option>
+                    <option value="10" class="nairobi-option">Langata</option>
+                    <option value="13" class="nairobi-option">Kasarani</option>
+                    <option value="16" class="nairobi-option">Nairobi west</option>
+                    <option value="6" class="kiambu-option">Kabete</option>
+                    <option value="11" class="kiambu-option">Thika</option>
+                    <option value="12" class="kiambu-option">Ruiru</option>
+                    <option value="14" class="kiambu-option">Kikuyu</option>
+                    <option value="15" class="kiambu-option">Juja</option>
+                    <option value="19" class="kajiado-option">Ongata Rongai</option>
+                    <option value="9" class="kajiado-option">Kitengela</option>
+                    <option value="17" class="kajiado-option">Ngong</option>
+                </select>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="services">Services:</label><br>
+                <input type="checkbox" id="furnished" name="furnished" value="Furnished">
+                <label for="furnished">Furnished</label><br>
+                <input type="checkbox" id="serviced" name="serviced" value="Serviced">
+                <label for="serviced">Serviced</label><br>
+                <input type="checkbox" id="shared" name="shared" value="Shared">
+                <label for="shared">Shared</label><br>
+            </div>
+
+            <button type="submit" class="btn btn-block">Predict Price</button>
+
+        </form>
+        <p id="result"></p>
+    </div>
+
+</body>
+
+</html>

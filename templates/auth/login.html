@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            /* New button color */
+            border-color: #4CAF50;
+            /* Adjust the border color to match */
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+            /* Color on hover */
+            border-color: #45a049;
+            /* Adjust the border color on hover to match */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container login-container">
+        <h2 class="login-title">Login to Your Account</h2>
+        <form action='/' method='POST'>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name='email' class="form-control" id="email" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name='password' class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <div class="register-link">
+                <a href="/register">Don't have an account? Register here.</a>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
